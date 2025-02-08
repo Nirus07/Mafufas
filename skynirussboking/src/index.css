@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.section-status{
+    background: #334155;
+}
+
+.section-status-2{
+    background: #3a4a61;
+}
+
+.leaflet-container{
+    width: 60rem;
+    height: 100%;
+    border-radius: 1.5em;
+}

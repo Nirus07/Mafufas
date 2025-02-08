@@ -1,9 +1,8 @@
-function App() {
+import Principal from './components/Pages/Principal'
 
+function App() {
   return (
-    <div>
-      <h1>Hola mundo</h1>
-    </div>
+    <Principal />
   )
 }
 
