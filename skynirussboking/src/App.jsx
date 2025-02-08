@@ -2,7 +2,9 @@ import Principal from './components/Pages/Principal'
 
 function App() {
   return (
-    <Principal />
+    <div>
+      <Principal />
+    </div>
   )
 }
 
