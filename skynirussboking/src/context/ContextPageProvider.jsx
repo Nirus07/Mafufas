@@ -3,36 +3,36 @@ import { createContext } from '../hooks/UseContext'
 import { MapContainer} from '../hooks/UseMap'
 import { flight as flights} from '../Flight'
 import { useState } from '../hooks/UseState'
-import { StatusFlight } from '../components/Pages/Principal/Sub-Principal/StatusFlight';
-import { map } from 'leaflet';
 
 export const PageContext = createContext();
 
 export function PageContextProvider(props){
 
   const [valueInput,setValueInput] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState('');
+  const [currentStatus, setCurrentStatus] = useState(true);
+  const [currentHour, setCurrentHour] = useState('');
+  const [currentGate, setCurrentGate] = useState('');
+  const [currentDelay, setCurrentDelay] = useState('');
+  const [currentAirline, setCurrentAirline] = useState('');
 
-  const mapFlights = flights.map(flight=> flight)
 
-
-  function handleChange(e){
-    setCurrentIndex(parseInt(e.target.value))
-    setValueInput(e.target.value)
-  }
-
-  function handleSubmit(e){    
+  function handleSubmit(e){
     e.preventDefault();
 
-    filterFlight()
+    flightCurrent();
 
-    setValueInput('')
-    setCurrentIndex('')
+    setValueInput('');
+    setCurrentIndex('');
   }
 
-  function filterFlight(){
-    const [flightFilter] = mapFlights.filter(flight=> flight.id === currentIndex)
-    console.log(flightFilter)
+  function flightCurrent(){
+    const [flightFilter] = flights.filter(flight=> flight.id === currentIndex);
+    setCurrentStatus(flightFilter.Status);
+    setCurrentHour(flightFilter.Hour);
+    setCurrentGate(flightFilter.Gate);
+    setCurrentDelay(flightFilter.Delay);
+    setCurrentAirline(flightFilter.Airline);
   }
 
   return(
@@ -40,10 +40,17 @@ export function PageContextProvider(props){
       value={{
         MapContainer,
         TileLayer,
-        mapFlights,
-        handleChange,
-        handleSubmit,
+        flights,
+        setCurrentIndex,
+        setValueInput,
         valueInput,
+        currentIndex,
+        handleSubmit,
+        currentStatus,
+        currentHour,
+        currentGate,
+        currentDelay,
+        currentAirline
       }}
     >
       {props.children}

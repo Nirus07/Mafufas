@@ -4,7 +4,12 @@ import { useContext } from '../../../../hooks/UseContext'
 
 export function Form() {
 
-  const { handleChange,handleSubmit, valueInput } = useContext(PageContext)
+  const { setValueInput, valueInput, handleSubmit} = useContext(PageContext)
+
+  function handleChange(e){
+    setCurrentIndex(parseInt(e.target.value))
+    setValueInput(e.target.value)
+  }
   
   return (
     <form className="flex justify-center" onSubmit={handleSubmit}>

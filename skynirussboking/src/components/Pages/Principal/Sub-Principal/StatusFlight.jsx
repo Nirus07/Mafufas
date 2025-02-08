@@ -1,10 +1,5 @@
-import { PageContext } from "../../../../context/ContextPageProvider";
-import { useContext } from "../../../../hooks/UseContext";
-
 export function StatusFlight({isActive}){
 
-  console.log()
-  
   const text = isActive ? 'Activo' : 'Inactivo'
 
   return (

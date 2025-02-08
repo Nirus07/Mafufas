@@ -1,5 +1,5 @@
 import Header from './Principal/Header'
-import Main from './Principal/PrincipalMain'
+import Main from './Principal/PageMain'
 
 function Principal() {
   return (

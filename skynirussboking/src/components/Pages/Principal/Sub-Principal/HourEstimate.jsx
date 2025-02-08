@@ -1,9 +1,6 @@
-import { useState } from '../../../../hooks/UseState'
-import { useContext } from "../../../../hooks/UseContext";
+export function HourEstimate({currentHour}) {
 
-export function HourEstimate() {
-
-  const [currentHour, setCurrentHour] = useState("10:20");
+   currentHour === "" ? currentHour = "NaN" : currentHour
 
   return (
     <div className="size-full flex flex-col justify-center section-status-2 p-2.5 gap-3">
