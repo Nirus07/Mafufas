@@ -4,7 +4,7 @@ import { useContext } from '../../../../hooks/UseContext'
 
 export function Form() {
 
-  const { setValueInput, valueInput, handleSubmit} = useContext(PageContext)
+  const { setValueInput, setCurrentIndex, valueInput, handleSubmit} = useContext(PageContext)
 
   function handleChange(e){
     setCurrentIndex(parseInt(e.target.value))
