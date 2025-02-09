@@ -5,7 +5,7 @@ import "leaflet/dist/leaflet.css"
 
 export function Leaflet(){
 
-  const { MapContainer, TileLayer } = useContext(PageContext)
+  const { MapContainer, TileLayer, Marker, Circle } = useContext(PageContext)
   
   const position = [9.999587791805968, -83.033425038633];
   return(
@@ -15,6 +15,7 @@ export function Leaflet(){
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' 
           className='rounded-10xl'
         />
+        <Marker position={position}/>
       </MapContainer >
   )
 }

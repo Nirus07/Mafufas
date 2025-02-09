@@ -40,6 +40,7 @@ export function PageContextProvider(props){
       value={{
         MapContainer,
         TileLayer,
+        Marker,
         flights,
         setCurrentIndex,
         setValueInput,
