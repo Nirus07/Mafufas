@@ -1,4 +1,4 @@
-import { LuGrip } from "react-icons/lu";
+import { LuGrip, LuUserRound } from "react-icons/lu";
 
 function Header() {
   return (
@@ -10,7 +10,9 @@ function Header() {
           />
           <h1 className="font-bold text-3xl m-0">SkyNirussBoking</h1>
         </div>
-        <i className="mr-2">Logo</i>
+        <LuUserRound 
+          className="mr-3 text-4xl"
+        />
       </nav>
     </header>
   );
