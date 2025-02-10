@@ -1,4 +1,4 @@
-import useFlights from "./useFlights";
+import useFlights from "../../../hooks/UseFlight";
 import FlightCard from "./FlightCard";
 
 const FlightList = ({ airportCode, filterType }) => {
