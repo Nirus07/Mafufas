@@ -11,7 +11,7 @@ function Header() {
           <h1 className="font-bold text-3xl m-0">SkyNirussBoking</h1>
         </div>
         <LuUserRound 
-          className="mr-3 text-4xl"
+          className="mr-3 text-4xl cursor-pointer"
         />
       </nav>
     </header>
